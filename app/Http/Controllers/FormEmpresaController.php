@@ -13,11 +13,12 @@ class FormEmpresaController extends Controller
     }
 
     public function guardarEmpresa(Request $request) {
-        $data = $request->input();
+        $data = $request->all();        //Con input() me va igual de bien que con all()
         try {
             $empresa = new Empresa;
             $empresa->nombre = $data['empresaNombre'];
             $empresa->cif = $data['empresaCif'];
+            $empresa->mail = $data['empresaMail'];
             $empresa->save();
             return redirect('/empresa')->with('status',"Empresa guardada");
         } catch(Exception $e) {

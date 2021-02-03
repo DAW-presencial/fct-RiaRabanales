@@ -25,7 +25,7 @@ Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
 
 Route::get('/empresa', [FormEmpresaController::class, 'crearFormEmpresa'])->name('empresa');
-Route::post('/empresaSubmit', [FormEmpresaController::class, 'guardarEmpresa']);
+//Route::post('/empresaSubmit', [FormEmpresaController::class, 'guardarEmpresa']);
 
 
 /*

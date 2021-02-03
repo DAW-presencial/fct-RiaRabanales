@@ -16,7 +16,7 @@
         height: 100%;
       }
       .footer {
-        position: absolute;
+        position: fixed;
         left: 0;
         bottom: 0;
         width: 100%;
@@ -69,9 +69,12 @@
 
       <!-- Pie de página -->
       @section('footer')
-      <footer class="footer mt-auto py-3 bg-light">
-        <div class="container">
-          <span class="text-muted">Aquí va el pie de página.</span>
+      <footer class="footer m-0 py-1 pl-5 bg-light row">
+        <div class="col-10 pl-3 pt-2">
+          <p class="text-muted"> - - DWES</p>
+        </div>
+        <div class="col-2 pt-2">
+          <p class="text-muted">M. Rabanales ©2021</p>
         </div>
       </footer>
       @endsection

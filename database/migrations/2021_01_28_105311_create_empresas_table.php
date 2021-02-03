@@ -22,11 +22,13 @@ class CreateEmpresasTable extends Migration
             //TODO ver si esto me puede coger num
             $table->string('telefono1')->nullable();
             $table->string('telefono2')->nullable();
-            $table->string('mail')->nullable();
+            $table->string('fax')->nullable();
+            $table->string('mail');
             //TODO añadir actividad y sector
-            $table->string('representanteNombre')->nullable();
-            $table->string('representanteEmail')->nullable();
-            $table->string('representanteNif')->nullable();
+            $table->enum('sector', ['primario', 'secundario', 'terciario']);
+            $table->string('representante_nombre')->nullable();
+            $table->string('representante_mail')->nullable();
+            $table->string('representante_nif')->nullable();
             $table->timestamps();
         });
     }
