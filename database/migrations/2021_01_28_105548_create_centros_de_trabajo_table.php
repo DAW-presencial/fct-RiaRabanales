@@ -15,12 +15,13 @@ class CreateCentrosDeTrabajoTable extends Migration
     {
         Schema::create('centros_de_trabajo', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('direccion');
-            $table->string('poblacion');
-            $table->string('actividad');
+            $table->string('centroNombre');
+            $table->string('centroDireccion');
+            $table->string('centroPoblacion');
+            $table->string('centroActividad');
             //TODO completar
-            $table->string('emailS');
+
+            $table->string('centroMail');
             $table->timestamps();
         });
     }

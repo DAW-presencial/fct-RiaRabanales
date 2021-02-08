@@ -19,7 +19,7 @@ class FormEmpresaController extends Controller
             //bail hace que si me falla un requisito no me siga comprobando los demás.
 
             //TODO: seguir trabajando el unique
-            'empresaCif' => "required|unique:empresas,CIF"
+            'empresaCif' => "required|unique:empresas,empresaCif"
         ]);
 
         return $request;

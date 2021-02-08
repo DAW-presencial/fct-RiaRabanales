@@ -15,6 +15,9 @@ class CreateTutoresEmpresaTable extends Migration
     {
         Schema::create('tutores_empresa', function (Blueprint $table) {
             $table->id();
+            $table->string('tutorNombre');
+            $table->string('tutorCif')->unique();
+            $table->string('tutorMail');
             $table->timestamps();
         });
     }

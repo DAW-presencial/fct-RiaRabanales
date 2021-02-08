@@ -14,21 +14,22 @@ class CreateEmpresasTable extends Migration
     public function up()
     {
         Schema::create('empresas', function (Blueprint $table) {
-            $table->string('nombre');
-            $table->string('CIF')->unique();
-            $table->string('direccion')->nullable();
-            $table->string('poblacion')->nullable();
-            $table->string('CP')->nullable();
+            $table->string('empresaNombre');
+            $table->string('empresaCif')->unique();
+            $table->string('empresaDireccion')->nullable();
+            $table->string('empresaPoblacion')->nullable();
+            $table->string('empresaCP')->nullable();
             //TODO ver si esto me puede coger num
-            $table->string('telefono1')->nullable();
-            $table->string('telefono2')->nullable();
-            $table->string('fax')->nullable();
-            $table->string('mail');
+
+            $table->string('empresaTel1')->nullable();
+            $table->string('empresaTel2')->nullable();
+            $table->string('empresaFax')->nullable();
+            $table->string('empresaMail');
             //TODO añadir actividad y sector
-            $table->enum('sector', ['primario', 'secundario', 'terciario']);
-            $table->string('representante_nombre')->nullable();
-            $table->string('representante_mail')->nullable();
-            $table->string('representante_nif')->nullable();
+            $table->enum('empresaSector', ['primario', 'secundario', 'terciario']);
+            $table->string('represNombre')->nullable();
+            $table->string('represMail')->nullable();
+            $table->string('represNif')->nullable();
             $table->timestamps();
         });
     }

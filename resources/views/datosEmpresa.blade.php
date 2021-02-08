@@ -1,5 +1,6 @@
 @extends('layouts.layout')
 <!-- Info: https://www.studentstutorial.com/laravel/insert-data-laravel -->
+<!--  https://stackoverflow.com/questions/47879154/laravel-checkbox-state-after-failed-validation -->
 
 @section('contenido')
 <div class="row d-flex justify-content-center">
@@ -7,7 +8,7 @@
     <div class="col-10 col-md-8">
         <!-- Aquí mi array de errores -->
         <p class="text-warning">
-            @if ($errors->any())        <!-- ojo: no lleva {} -->
+            @if ($errors->any())        <!-- ojo: en formato laravel no lleva {} -->
                 <ul class="list-group list-unstyled text-warning">Debe corregir los siguientes problemas:
                     @foreach ($errors->all() as $error)
                         <li class="border-none px-3">&#8594; <span class="text-muted">{{$error}}</span></li>
