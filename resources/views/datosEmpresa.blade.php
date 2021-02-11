@@ -4,7 +4,8 @@
 
 @section('contenido')
 <div class="row d-flex justify-content-center">
-    <h2 class="text-center mt-20">Ficha de recogida de datos</h2>
+    <!-- <h2 class="text-center mt-20">Ficha de recogida de datos</h2> -->
+    <h2 class="text-center mt-20">{{__('formEmpresa_titulo')}}</h2>
     <div class="col-10 col-md-8">
         <!-- Aquí mi array de errores -->
         <p class="text-warning">
@@ -50,6 +51,7 @@
             <div class="form-group">
                 <label for="empresaMail">E-mail</label>
                 <input type="mail" class="form-control" id="empresaMail" name="empresaMail" value="{{old('empresaMail')}}" />
+                <p class="text-warning small">{{$errors->first('empresaMail')}}
             </div>
             <div class="row">
                 <div class="col-4 form-group">
@@ -68,15 +70,22 @@
             <div class="form-group d-flex justify-content-between py-2">
                 <label>Sector de actividad</label>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sector" id="primario" value="primario">
+                    <!-- Así mantengo la permanencia de los radios -->
+                    <input class="form-check-input" type="radio" name="sector" id="primario" value="primario"
+                        {{ (old('sector') == "primario") ? "checked" : "" }}
+                    >
                     <label class="form-check-label" for="primario">primario</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sector" id="secundario" value="secundario">
+                    <input class="form-check-input" type="radio" name="sector" id="secundario" value="secundario"
+                        {{ (old('sector') == "secundario") ? "checked" : "" }}
+                    >
                     <label class="form-check-label" for="secundario">secundario</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sector" id="terciario" value="terciario">
+                    <input class="form-check-input" type="radio" name="sector" id="terciario" value="terciario"
+                        {{ (old('sector') == "terciario") ? "checked" : "" }}
+                    >
                     <label class="form-check-label" for="terciario">terciario</label>
                 </div>
             </div>
@@ -87,11 +96,15 @@
             <div class="form-group pt-2">
                 <label>Titularidad</label>
                 <div class="form-check form-check-inline px-5">
-                    <input class="form-check-input" type="radio" name="titularidad" id="publica" value="publica">
+                    <input class="form-check-input" type="radio" name="titularidad" id="publica" value="publica"
+                        {{ (old('titularidad') == "publica") ? "checked" : "" }}
+                    >
                     <label class="form-check-label" for="publica">pública</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="titularidad" id="privada" value="privada">
+                    <input class="form-check-input" type="radio" name="titularidad" id="privada" value="privada"
+                        {{ (old('titularidad') == "privada") ? "checked" : "" }}
+                    >
                     <label class="form-check-label" for="privada">privada</label>
                 </div>
             </div>
@@ -137,9 +150,10 @@
             </div>
             <div class="form-group col-12">
                 <label for="comentarios">Comentarios</label>
-                <textarea class="form-control" id="comentarios" name="comentarios" rows="3"></textarea>
+                <textarea class="form-control" id="comentarios" name="comentarios" rows="3">{{old('comentarios')}}</textarea>
             </div>
             <br>
+            <!-- TODO lugar y fecha de firma -->
             <div class="d-flex justify-content-between p-3">
                 <button type="reset" class="btn btn-dark">Borrar</button>
                 <button type="submit" class="btn btn-dark">Enviar</button>    

@@ -50,7 +50,10 @@
                   <a class="nav-link" href="/about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/empresa">Empresa</a>
+                  <a class="nav-link" href="/empresa">Datos de empresa</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/blog">Blog</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact</a>
