@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FormEmpresaController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +23,21 @@ Route::get('/', function () {
 */
 
 Route::view('/', 'home')->name('home');
-Route::view('/about', 'about')->name('about');
+Route::view('/blog', 'blog')->name('blog');
 
 Route::get('/empresa', [FormEmpresaController::class, 'crearFormEmpresa'])->name('empresa');
 Route::post('/empresaSubmit', [FormEmpresaController::class, 'guardarEmpresa']);
 
-Route::view('/blog', 'blog')->name('blog');
+Route::resource('contacts', ContactController::class);
+// Esto teóricamente es lo mismo que:  Route::resource('/contacts', 'App\Http\Controllers\ContactController');
+// Pero recordar: si lo quito puedo quitar el use de arriba
+// En todo caso, resource() hace que cada vez lo llame como toca: GET está mapeado al método index() del controlador, etc
+
+
+
+
+
+
 
 
 /*
